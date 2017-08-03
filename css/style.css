@@ -1,1 +1,150 @@
-div {color: red; font-size: 75px}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+ul, ol {list-style: none}
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+.slider {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative
+}
+.slider ul {
+    width: calc(100% * 7);
+    height: 100%;
+}
+.slider ul li {
+    width: calc(100% / 7);
+    height: 100%;
+    float: left;
+    font-size: 50px;
+    color: #086fb1;
+    text-align: center;
+    line-height: 300px;
+    overflow-x: hidden
+}
+.slider:before {
+    content: "Em An - Project";
+    position: absolute;
+    width: 100%;
+    color: rgba(255, 255, 255, .5);
+    font-size: 40px;
+    text-align: center;
+    padding-top: 5vh;
+}
+.slider ul li:first-of-type, .slider ul li:nth-of-type(7) {background: #009688}
+.slider ul li:nth-of-type(3) {background: #FF9800}
+.slider ul li:nth-of-type(4) {background: #FF9800}
+.slider ul li:nth-of-type(5) {background: #FF9800}
+.slider ul li:nth-of-type(6) {background: #FF9800}
+.slider ul li:last-of-type, .slider ul li:nth-of-type(2) {background: #2196F3}
+.slider ol, .slider .control .fa {
+    position: absolute;
+    z-index: 999999
+}
+.slider ol {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999
+}
+.slider ol li {
+    display: inline-block;
+    cursor: pointer
+}
+.slider ol li:hover .fa:before, .slider ol li.active .fa:before {
+    content: "\f111"
+}
+.slider .control .fa:first-of-type {left: 10px; top: 33%}
+.slider .control .fa:last-of-type {right: 10px; top: 33%}
+.slider .control .fa {
+    cursor: pointer
+}
+.slider .fa {
+    text-shadow: 0 0 5px #333;
+    color: #fff
+}
+.project {
+    width: 700px;
+    height: 450px;
+    margin: 20vh auto 0;
+    position: relative
+}
+.project .screen, .project .tablet, .project .mobile {
+    border: 2px solid #555;
+    border-radius: 15px;
+    background: #222;
+    padding: 25px;
+    background-size: cover;
+    transition: all .5s ease-in-out
+}
+.project .tablet:before, .project .mobile:before {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #333;
+    box-shadow: 0 0 2px #444;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+}
+.project .tablet:before {bottom: 3px; left: 47%}
+.project .mobile:before {bottom: 7px; left: 40%}
+.project .screen {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    position: relative
+}
+.project .tablet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    height: 300px
+}
+.project .mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 125px;
+    height: 225px;
+    padding: 30px 7px
+}
+.project .screen:hover {
+    z-index: 99999;
+}
+.project .screen:hover ~ .mobile {
+    left: -80px
+}
+.project .screen:hover ~ .tablet {
+    right: -80px
+}
+.project .screen:hover ~ .mobile, .project .screen:hover ~ .tablet {
+    bottom: 80px;
+    opacity: .5;
+    transform: scale(0.8)
+}
+.project .screen:hover, .project .mobile:hover, .project .tablet:hover {transform: scale(1.1)}
+.project .mobile:hover ~ .screen, .project .tablet:hover ~ .screen {opacity: 0.9}
+.project .view {
+    width: 100%;
+    height: 100%;
+    background-position: top;
+    background-size: cover;
+    transition: all .5s ease-in-out
+}
+.project .screen:hover .view, .project .tablet:hover .view, .project .mobile:hover .view {
+    background-position: bottom;
+    transition: all 3s ease-in-out
+}
