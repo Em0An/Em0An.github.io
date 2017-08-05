@@ -20,11 +20,11 @@ ul, ol {list-style: none}
     position: relative
 }
 .slider ul {
-    width: calc(100% * 7);
+    width: calc(100% * 9);
     height: 100%;
 }
 .slider ul li {
-    width: calc(100% / 7);
+    width: calc(100% / 9);
     height: 100%;
     float: left;
     font-size: 50px;
@@ -42,12 +42,13 @@ ul, ol {list-style: none}
     text-align: center;
     padding-top: 5vh;
 }
-.slider ul li:first-of-type, .slider ul li:nth-of-type(7) {background: #009688}
-.slider ul li:nth-of-type(3) {background: #FF9800}
-.slider ul li:nth-of-type(4) {background: #FF9800}
+.slider ul li:first-of-type, .slider ul li:nth-of-type(8) {background: #8c4be3}
+.slider ul li:nth-of-type(3) {background: #ca69e4}
+.slider ul li:nth-of-type(4) {background: #a03e56}
 .slider ul li:nth-of-type(5) {background: #FF9800}
-.slider ul li:nth-of-type(6) {background: #FF9800}
-.slider ul li:last-of-type, .slider ul li:nth-of-type(2) {background: #2196F3}
+.slider ul li:nth-of-type(6) {background: #c33672}
+.slider ul li:nth-of-type(7) {background: #2e9c35}
+.slider ul li:last-of-type, .slider ul li:nth-of-type(2) {background: #008cff}
 .slider ol, .slider .control .fa {
     position: absolute;
     z-index: 999999
@@ -75,8 +76,10 @@ ul, ol {list-style: none}
     color: #fff
 }
 .project {
-    width: 700px;
-    height: 450px;
+    width: 100%;
+    max-width: 850px;
+    min-width: 700px;
+    height: 500px;
     margin: 20vh auto 0;
     position: relative
 }
@@ -101,8 +104,9 @@ ul, ol {list-style: none}
 .project .tablet:before {bottom: 3px; left: 47%}
 .project .mobile:before {bottom: 7px; left: 40%}
 .project .screen {
-    width: 600px;
-    height: 400px;
+    width: 80%;
+    min-width: 650px;
+    height: 450px;
     margin: auto;
     position: relative
 }
@@ -146,5 +150,29 @@ ul, ol {list-style: none}
 }
 .project .screen:hover .view, .project .tablet:hover .view, .project .mobile:hover .view {
     background-position: bottom;
-    transition: all 3s ease-in-out
+}
+.load {
+  position: fixed;
+  background: rgba(0,0,0,.9);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+    z-index: 999999999999999
+}
+.load .fa {
+  animation-name: load;
+  animation-duration: 2s;
+  animation-iteration-count: 10;
+  animation-timing-function: linear;
+  margin: auto
+}
+@keyframes load {
+  0% {
+    transform: rotate(-360deg);
+    color: #ff0000;
+  }
+  100% {
+    transform: rotate(180deg);
+    color: #0000ff;
+  }
 }
