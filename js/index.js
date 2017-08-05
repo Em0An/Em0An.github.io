@@ -1,3 +1,6 @@
+$(window).on('load', function() {
+  $('.load').delay(3000).slideUp(1000).fadeOut(1000);
+});
 $(function() {
     // All Variable
     var slider = $(".slider"),
@@ -95,5 +98,12 @@ $(function() {
 
     $(".view").each(function() {
         $(this).css("background-image", "url(" + $(this).data("image") + ")");
+    });
+    
+    // Transition
+    $('.project .screen, .project .tablet, .project .mobile').hover(function () {
+        $(this).find('.view').css('transition', 'all ' + $(this).find('.view').data('second') + 's ease-in-out');
+    }, function () {
+        $(this).find('.view').css('transition', 'all 1s ease-in-out');
     });
 });
