@@ -170,7 +170,7 @@ ul, ol {list-style: none}
   -webkit-background-size: 150px 150px;
   background-size: 150px 150px;
   display: flex;
-    z-index: 9999999999999999
+z-index: 999999999999999999999999999
 }
 .load .cont {
   animation-name: load;
@@ -181,16 +181,16 @@ ul, ol {list-style: none}
   font-size: 50px;
   font-family: sans-serif;
   font-weight: bold;
-  text-shadow: 0 0 5px #fff
+font-family:'Open Sans', sans-serif;
 }
 
 @keyframes load {
   0%, 100% {
     transform: translatex(25px);
-    color: #761ece;
+    color: #fff;
   }
   50% {
     transform: translatex(-25px);
-    color: #bc1089;
+    color: yellow;
   }
 }
