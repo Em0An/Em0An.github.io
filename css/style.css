@@ -152,27 +152,45 @@ ul, ol {list-style: none}
     background-position: bottom;
 }
 .load {
-  position: fixed;
-  background: rgba(0,0,0,.9);
   width: 100%;
+  position: fixed;
   height: 100vh;
+    overflow: hidden;
+    background: -webkit-radial-gradient(#ddd, rgba(0,0,0,0) 2%), 
+        -webkit-radial-gradient(rgb(255,255,255) 2%, rgba(0,0,0,0) 2%), #de6de0;
+  background: -moz-radial-gradient(rgb(255,255,255) 2%, rgba(0,0,0,0) 2%), 
+      -moz-radial-gradient(rgb(255,255,255) 2%, rgba(0,0,0,0) 6%), #de6de0;
+  background: radial-gradient(rgb(255,255,255) 2%, rgba(0,0,0,0) 6%),
+      radial-gradient(rgb(255,255,255) 2%, rgba(0,0,0,0) 2%), #de6de0;
+  background-position: 0 0, 75px 75px;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 150px 150px;
+  background-size: 150px 150px;
   display: flex;
-    z-index: 999999999999999
+    z-index: 9999999999999999
 }
-.load .fa {
+.load .cont {
   animation-name: load;
   animation-duration: 2s;
   animation-iteration-count: 10;
   animation-timing-function: linear;
-  margin: auto
+  margin: auto;
+  font-size: 50px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff
 }
+
 @keyframes load {
-  0% {
-    transform: rotate(-360deg);
-    color: #ff0000;
+  0%, 100% {
+    transform: translatex(25px);
+    color: #761ece;
   }
-  100% {
-    transform: rotate(180deg);
-    color: #0000ff;
+  50% {
+    transform: translatex(-25px);
+    color: #bc1089;
   }
 }
