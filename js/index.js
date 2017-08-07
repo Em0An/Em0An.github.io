@@ -92,4 +92,9 @@ $(function() {
     // When Hover fa ==============================================================
     slider.find('.fa').on('mouseenter', function() { clearInterval(autoPlay); });
     slider.find('.fa').on('mouseleave', function() { autoRunSlider(); });
+  
+  // veiw =============================================================================
+  $('.project .view').each(function() {
+        $(this).css("background-image", "url(" + $(this).data("image") + ")");
+    });
 });
