@@ -88,16 +88,6 @@ $(function() {
             controlFa.last().click();
         }
     });
-
-    // Auto Run Slider ==============================================================
-    function autoRunSlider() {
-        if (body.css('direction') === 'ltr') {
-            autoPlay = setInterval(function() { controlFa.last().click(); }, sliderWait);
-        } else if (body.css('direction') === 'rtl') {
-            autoPlay = setInterval(function() { controlFa.first().click(); }, sliderWait);
-        }
-    }
-    autoRunSlider();
     
     // When Hover fa ==============================================================
     slider.find('.fa').on('mouseenter', function() { clearInterval(autoPlay); });
