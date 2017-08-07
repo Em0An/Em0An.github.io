@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-  $('.load').delay(3000).slideUp(1000).fadeOut(1000);
+  $('.load').delay(3000).fadeOut(1000).fadeOut(1000);
 });
 $(function() {
     // All Variable
