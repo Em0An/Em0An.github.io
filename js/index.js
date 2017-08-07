@@ -97,4 +97,9 @@ $(function() {
   $('.project .view').each(function() {
         $(this).css("background-image", "url(" + $(this).data("image") + ")");
     });
+  $('.project .screen, .project .tablet, .project .mobile').hover(function () {
+    $(this).find('.view').css('transition', 'all ' + $(this).find('.view').data('second') + 's ease-in-out');
+  }, function () {
+    $(this).find('.view').css('transition', 'all 2s ease-in-out');
+  });
 });
